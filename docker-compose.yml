@@ -9,3 +9,10 @@ app:
   command: go run server.go
 redis:
   image: redis
+db:
+  image: mysql:5.7
+  volumes:
+    - ./db/mysql_data:/var/lib/mysql
+  environment:
+    - MYSQL_ROOT_PASSWORD=root
+    - MYSQL_DATABASE=app
